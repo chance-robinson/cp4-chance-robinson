@@ -15,7 +15,6 @@
   </div>
   <div class="footer">
     <router-link to="/admin">Admin</router-link>
-    <hr>
     <a href="">Github</a>
   </div>
 </div>
