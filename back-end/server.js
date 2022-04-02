@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost:27017/museum', {
+mongoose.connect('mongodb://localhost:27017/cp4', {
   useNewUrlParser: true
 });
 
@@ -50,7 +50,7 @@ app.post('/api/items', async (req, res) => {
     await item.save();
     res.send(item);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(504);
   }
 });
@@ -62,7 +62,7 @@ app.delete('/api/items/:id', async (req, res) => {
     });
     res.sendStatus(200);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(503);
   }
 });
@@ -70,9 +70,10 @@ app.delete('/api/items/:id', async (req, res) => {
 app.get('/api/items', async (req, res) => {
   try {
     let items = await Item.find();
+    console.log(items);
     res.send(items);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(502);
   }
 }); 
@@ -87,9 +88,9 @@ app.put('/api/items/:id', async (req, res) => {
     await item.save();
     res.sendStatus(200);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(501);
   }
 }); 
 
-app.listen(3000, () => console.log('Server listening on port 3000!'));
+app.listen(3001, () => console.log('Server listening on port 3001!'));

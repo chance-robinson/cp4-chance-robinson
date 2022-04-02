@@ -101,7 +101,6 @@ export default {
     },
     selectItem(item) {
       this.findTitle = "";
-      this.findDesc = "";
       this.findItem = item;
     },
     async deleteItem(item) {
