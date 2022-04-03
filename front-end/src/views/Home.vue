@@ -1,10 +1,15 @@
 <template>
 <div class="home">
+  <div class="head">
+    <router-link class="button" to="/recipe">Add a Recipe!</router-link>
+  </div>
   <section class="image-gallery">
     <div class="image" v-for="item in items" :key="item.id">
-      <h2>{{item.title}}</h2>
-      <p>{{item.desc}}</p>
       <img :src="item.path" />
+      <h2>Dish : {{item.title}}</h2>
+      <p>About: {{item.desc}}</p>
+      <p>Instructions:</p>
+      <p> {{item.instr}}</p>
     </div>
   </section>
 </div>
@@ -39,6 +44,16 @@ export default {
 </script>
 
 <style scoped>
+.head {
+  text-align: center;
+}
+
+.image {
+  padding: 15px;
+  background-color: #F5F4DB;
+  border-radius: 8px;
+}
+
 .image h2 {
   font-style: italic;
 }

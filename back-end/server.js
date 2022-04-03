@@ -25,6 +25,7 @@ const upload = multer({
 const itemSchema = new mongoose.Schema({
   title: String,
   desc: String,
+  instr: String,
   path: String,
 });
 
@@ -44,6 +45,7 @@ app.post('/api/items', async (req, res) => {
   const item = new Item({
     title: req.body.title,
     desc: req.body.desc,
+    instr: req.body.instr,
     path: req.body.path,
   });
   try {
@@ -85,6 +87,7 @@ app.put('/api/items/:id', async (req, res) => {
     });
     item.title = req.body.title;
     item.desc = req.body.desc;
+    item.instr = req.body.instr;
     await item.save();
     res.sendStatus(200);
   } catch (error) {
