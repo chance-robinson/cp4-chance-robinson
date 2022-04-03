@@ -36,7 +36,7 @@ export default {
         this.items = response.data;
         return true;
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     },
   }
@@ -46,12 +46,16 @@ export default {
 <style scoped>
 .head {
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .image {
   padding: 15px;
+  margin: 0 0 1.5em;
   background-color: #F5F4DB;
   border-radius: 8px;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .image h2 {
@@ -67,12 +71,7 @@ export default {
 
 .image-gallery {
   column-gap: 1.5em;
-}
-
-.image {
-  margin: 0 0 1.5em;
-  display: inline-block;
-  width: 100%;
+  margin: 4px;
 }
 
 .image img {
